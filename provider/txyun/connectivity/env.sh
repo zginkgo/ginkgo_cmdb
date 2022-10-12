@@ -1,0 +1,9 @@
+#!/bin/zsh
+export TX_CLOUD_REGION="ap-nanjing"
+export TX_CLOUD_SECRET_ID="AKIDTilY5LJWUCbIlyHP2PVK3WiyBJBoKoDL"
+export TX_CLOUD_SECRET_KEY="zhZCZgW8WdTYP0LP6g2DDXcdOvDo8C3f"
+
+
+export TX_CLOUD_REGION=""
+export TX_CLOUD_SECRET_ID=""
+export TX_CLOUD_SECRET_KEY=""

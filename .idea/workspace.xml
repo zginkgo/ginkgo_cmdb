@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="49521be3-2939-45e8-b91a-ce5847861fd3" name="变更" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file:///usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="true" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/apps/task/api/http.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/apps/task/api/task.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/etc/ginkgo-cmdb-dev.env" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/etc/ginkgo-cmdb-dev.toml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/protocol/http.go" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="KubernetesApiPersistence">
+    <option name="context" value="kubernetes-admin@kubernetes" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2FLTsnLEZp73zN4hAm0NUjexPgh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultGoTemplateProperty": "Go File",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "RunOnceActivity.go.vendoring.notification.had.been.shown": "true",
+    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "configurable..is.expanded": "false",
+    "configurable.GoLibrariesConfigurable.is.expanded": "true",
+    "go.import.settings.migrated": "true",
+    "last_opened_file_path": "/Users/y/Go_Env/src/github.com/zginkgo/ginkgo_cmdb",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "go.dep"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/apps" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/rpc" />
+      <recent name="$PROJECT_DIR$/provider/txyun/connectivity" />
+      <recent name="$PROJECT_DIR$/protocol" />
+      <recent name="$PROJECT_DIR$/apps" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go 测试.ginkgo_cmdb/apps/book/impl 中的 TestCreateBook">
+    <configuration name="ginkgo_cmdb/apps/book/impl 中的 TestCreateBook" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="ginkgo_cmdb" />
+      <working_directory value="$PROJECT_DIR$/apps/book/impl" />
+      <kind value="PACKAGE" />
+      <package value="ginkgo_cmdb/apps/book/impl" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestCreateBook\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ginkgo_cmdb/apps/book/impl 中的 TestDescribeBook" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="ginkgo_cmdb" />
+      <working_directory value="$PROJECT_DIR$/apps/book/impl" />
+      <kind value="PACKAGE" />
+      <package value="ginkgo_cmdb/apps/book/impl" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestDescribeBook\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ginkgo_cmdb/apps/book/impl 中的 TestQueryBook" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="ginkgo_cmdb" />
+      <working_directory value="$PROJECT_DIR$/apps/book/impl" />
+      <kind value="PACKAGE" />
+      <package value="ginkgo_cmdb/apps/book/impl" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestQueryBook\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ginkgo_cmdb/apps/secret/impl 中的 TestCreateSecret" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="ginkgo_cmdb" />
+      <working_directory value="$PROJECT_DIR$/apps/secret/impl" />
+      <kind value="PACKAGE" />
+      <package value="ginkgo_cmdb/apps/secret/impl" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestCreateSecret\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ginkgo_cmdb/apps/secret/impl 中的 TestDescribeSecret" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="ginkgo_cmdb" />
+      <working_directory value="$PROJECT_DIR$/apps/secret/impl" />
+      <kind value="PACKAGE" />
+      <package value="ginkgo_cmdb/apps/secret/impl" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestDescribeSecret\E$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go 测试.ginkgo_cmdb/apps/book/impl 中的 TestCreateBook" />
+        <item itemvalue="Go 测试.ginkgo_cmdb/apps/book/impl 中的 TestDescribeBook" />
+        <item itemvalue="Go 测试.ginkgo_cmdb/apps/book/impl 中的 TestQueryBook" />
+        <item itemvalue="Go 测试.ginkgo_cmdb/apps/secret/impl 中的 TestCreateSecret" />
+        <item itemvalue="Go 测试.ginkgo_cmdb/apps/secret/impl 中的 TestDescribeSecret" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>false</integration-enabled>
+    <environment>
+      <map>
+        <entry key="Environment: GOPRIVATE" value="gitee.com" />
+      </map>
+    </environment>
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>
