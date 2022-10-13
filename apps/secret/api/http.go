@@ -70,6 +70,9 @@ func (h *handler) Registry(ws *restful.WebService) {
 
 		// 是否开启鉴权
 		Metadata(label.Permission, label.Enable).
+
+		// 基于用户属性的权限装饰
+		Metadata(label.Allow, "admin").
 		Reads(secret.CreateSecretRequest{}).
 		Writes(response.NewData(secret.Secret{})))
 

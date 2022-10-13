@@ -1,14 +1,14 @@
 package api
 
 import (
-	"github.com/zginkgo/ginkgo_cmdb/apps"
-	"github.com/zginkgo/ginkgo_cmdb/apps/task"
 	restfulspec "github.com/emicklei/go-restful-openapi"
 	"github.com/emicklei/go-restful/v3"
 	"github.com/infraboard/mcube/http/label"
 	"github.com/infraboard/mcube/http/response"
 	"github.com/infraboard/mcube/logger"
 	"github.com/infraboard/mcube/logger/zap"
+	"github.com/zginkgo/ginkgo_cmdb/apps"
+	"github.com/zginkgo/ginkgo_cmdb/apps/task"
 )
 
 var (

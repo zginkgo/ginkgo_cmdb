@@ -5,11 +5,13 @@ import (
 	"fmt"
 	restfulspec "github.com/emicklei/go-restful-openapi/v2"
 	"github.com/emicklei/go-restful/v3"
+	"github.com/infraboard/mcube/http/label"
 	"github.com/infraboard/mcube/logger"
 	"github.com/infraboard/mcube/logger/zap"
 	"github.com/zginkgo/ginkgo_cmdb/apps"
 	"github.com/zginkgo/ginkgo_cmdb/conf"
 	"github.com/zginkgo/ginkgo_cmdb/swagger"
+	"github.com/zginkgo/ginkgo_keyauth/apps/endpoint"
 	keyauth_rpc "github.com/zginkgo/ginkgo_keyauth/client/rpc"
 	keyauth_auth "github.com/zginkgo/ginkgo_keyauth/client/rpc/auth"
 	"net/http"
@@ -37,7 +39,7 @@ func NewHTTPService() *HTTPService {
 	if err != nil {
 		panic(err)
 	}
-	auther := keyauth_auth.NewKeyauthAuther(keyauthClient.Token())
+	auther := keyauth_auth.NewKeyauthAuther(keyauthClient, "cmdb")
 	fmt.Println(auther)
 	r.Filter(auther.RestfulAuthHandlerFunc)
 
@@ -52,6 +54,7 @@ func NewHTTPService() *HTTPService {
 	}
 
 	return &HTTPService{
+		kc:     keyauthClient,
 		r:      r,
 		server: server,
 		l:      zap.L().Named("HTTP Service"),
@@ -61,6 +64,7 @@ func NewHTTPService() *HTTPService {
 
 // HTTPService http服务
 type HTTPService struct {
+	kc     *keyauth_rpc.ClientSet
 	r      *restful.Container
 	l      logger.Logger
 	c      *conf.Config
@@ -84,6 +88,12 @@ func (s *HTTPService) Start() error {
 	s.r.Add(restfulspec.NewOpenAPIService(config))
 	s.l.Infof("Get the API using http://%s%s", s.c.App.HTTP.Addr(), config.APIPath)
 
+	// 此时所有的webservice已经加载完成
+	if err := s.Registry(); err != nil {
+		// 注册流程不影响启动流程，不retrun
+		s.l.Errorf("registry failed, %s", err)
+	}
+
 	// 启动 HTTP服务
 	s.l.Infof("HTTP服务启动成功, 监听地址: %s", s.server.Addr)
 	if err := s.server.ListenAndServe(); err != nil {
@@ -104,5 +114,49 @@ func (s *HTTPService) Stop() error {
 	if err := s.server.Shutdown(ctx); err != nil {
 		s.l.Errorf("graceful shutdown timeout, force exit")
 	}
+	return nil
+}
+
+// Registry 通过keyauth SDK注册服务功能
+// 什么时候注册? 服务启动时候? 需要WebService都已经加载完成, 才能使用RegisteredWebServices()
+// 一定要等到所有WebService已经加载到router后
+func (s *HTTPService) Registry() error {
+	// 服务功能列表, 从路由装饰上获取注册信息
+	wss := s.r.RegisteredWebServices()
+
+	endpoints := endpoint.EndpiontSet{
+		Service:   "cmdb",
+		Endpoints: []*endpoint.Endpiont{},
+	}
+	for i := range wss {
+		// 取出每个web service路由
+		routes := wss[i].Routes()
+		for _, r := range routes {
+			var resource, action string
+			if r.Metadata != nil {
+				if v, ok := r.Metadata[label.Resource]; ok {
+					resource, _ = v.(string)
+				}
+				if v, ok := r.Metadata[label.Action]; ok {
+					action, _ = v.(string)
+				}
+			}
+			endpoints.Endpoints = append(endpoints.Endpoints, &endpoint.Endpiont{
+				Resource: resource,
+				Action:   action,
+				Path:     r.Path,
+				Method:   r.Method,
+			})
+		}
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
+	defer cancel()
+	resp, err := s.kc.Endpoint().RegistryEndpoint(ctx, &endpoints)
+	if err != nil {
+		return err
+	}
+
+	s.l.Debugf("registry response: %s", resp)
 	return nil
 }

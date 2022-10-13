@@ -1,10 +1,11 @@
 package api
 
 import (
-	"github.com/zginkgo/ginkgo_cmdb/apps/secret"
-	"github.com/zginkgo/ginkgo_cmdb/utils"
 	"github.com/emicklei/go-restful/v3"
 	"github.com/infraboard/mcube/http/response"
+	"github.com/zginkgo/ginkgo_cmdb/apps/secret"
+	"github.com/zginkgo/ginkgo_cmdb/utils"
+	"github.com/zginkgo/ginkgo_keyauth/apps/token"
 )
 
 func (h *handler) CreateSecret(r *restful.Request, w *restful.Response) {
@@ -13,6 +14,9 @@ func (h *handler) CreateSecret(r *restful.Request, w *restful.Response) {
 		response.Failed(w, err)
 		return
 	}
+
+	//  确保身份任务已经开启
+	req.CreateBy = r.Attribute("token").(*token.Token).Data.UserName
 
 	set, err := h.service.CreateSecret(r.Request.Context(), req)
 	if err != nil {
@@ -25,6 +29,7 @@ func (h *handler) CreateSecret(r *restful.Request, w *restful.Response) {
 
 func (h *handler) QuerySecret(r *restful.Request, w *restful.Response) {
 	req := secret.NewQuerySecretRequestFromHTTP(r.Request)
+
 	set, err := h.service.QuerySecret(r.Request.Context(), req)
 
 	if err != nil {

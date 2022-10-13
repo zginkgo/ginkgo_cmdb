@@ -81,7 +81,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Go 测试.ginkgo_cmdb/apps/book/impl 中的 TestCreateBook">
-    <configuration name="ginkgo_cmdb/apps/book/impl 中的 TestCreateBook" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="ginkgo_cmdb/apps/book/impl 中的 TestCreateBook" type="GoTestRunConfiguration" factoryName="Go Test" nameIsGenerated="true">
       <module name="ginkgo_cmdb" />
       <working_directory value="$PROJECT_DIR$/apps/book/impl" />
       <kind value="PACKAGE" />
@@ -138,7 +138,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go 测试.ginkgo_cmdb/apps/book/impl 中的 TestCreateBook" />
         <item itemvalue="Go 测试.ginkgo_cmdb/apps/book/impl 中的 TestDescribeBook" />
         <item itemvalue="Go 测试.ginkgo_cmdb/apps/book/impl 中的 TestQueryBook" />
         <item itemvalue="Go 测试.ginkgo_cmdb/apps/secret/impl 中的 TestCreateSecret" />

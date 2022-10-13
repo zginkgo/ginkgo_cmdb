@@ -20,7 +20,7 @@ require (
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.509
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm v1.0.509
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sts v1.0.509
-	github.com/zginkgo/ginkgo_keyauth v0.0.2
+	github.com/zginkgo/ginkgo_keyauth v0.0.8
 	google.golang.org/grpc v1.46.2
 	google.golang.org/protobuf v1.27.1
 )
